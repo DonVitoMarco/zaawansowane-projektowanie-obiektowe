@@ -1,1 +1,1 @@
-# Studia-Zaawansowane-Projektowanie-Obiektowe
+# Zaawansowane Projektowanie Obiektowe
