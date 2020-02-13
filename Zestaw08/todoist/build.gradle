@@ -1,0 +1,113 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
+    id 'java'
+    id 'idea'
+    id 'groovy'
+    id 'jacoco'
+    id 'checkstyle'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'pl.marek'
+version = '0.0.1-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    compile.exclude module: "spring-boot-starter-logging"
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply from: "$rootDir/versions.gradle"
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+    implementation "org.springframework.boot:spring-boot-starter-aop"
+    implementation "org.springframework.boot:spring-boot-starter-data-mongodb"
+    implementation "org.springframework.boot:spring-boot-starter-log4j2"
+    implementation "org.springframework.boot:spring-boot-starter-mail"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.retry:spring-retry"
+
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonDatatypeVersion}"
+    implementation "io.springfox:springfox-swagger2:${swaggerVersion}"
+    implementation "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+    implementation "io.vavr:vavr:${vavrVersion}"
+    implementation "org.apache.logging.log4j:log4j-web:${log4jWebVersion}"
+    implementation "org.apache.velocity:velocity:${velocityVersion}"
+    implementation "org.apache.velocity:velocity-tools:${velocityToolsVersion}"
+
+    compileOnly "org.projectlombok:lombok"
+    annotationProcessor "org.projectlombok:lombok"
+
+    // only for development purpose
+    implementation "de.flapdoodle.embed:de.flapdoodle.embed.mongo:${flapdoodleEmbededMongoVersion}"
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test"
+    testImplementation "com.icegreen:greenmail-spring:${greenmailVersion}"
+    testImplementation "org.codehaus.groovy:groovy-all:${groovyVersion}"
+    testImplementation "org.spockframework:spock-core:${spockVersion}"
+    testImplementation "org.spockframework:spock-spring:${spockVersion}"
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.3
+            }
+        }
+        rule {
+            includes = ['pl.marek.todoist.domain.**']
+            element = 'BUNDLE'
+
+            limit {
+                counter = 'CLASS'
+                value = 'MISSEDCOUNT'
+                maximum = 0
+            }
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 0.8
+            }
+            limit {
+                counter = 'COMPLEXITY'
+                value = 'COVEREDRATIO'
+                minimum = 0.8
+
+            }
+            limit {
+                counter = 'METHOD'
+                value = 'COVEREDRATIO'
+                minimum = 0.8
+            }
+            limit {
+                counter = 'INSTRUCTION'
+                value = 'COVEREDRATIO'
+                minimum = 0.4
+            }
+            limit {
+                counter = 'BRANCH'
+                value = 'COVEREDRATIO'
+                minimum = 0.8
+            }
+        }
+    }
+}
+
+task copyJar(type: Copy) {
+    from "build/libs/${jar.archiveName}"
+    rename("-${jar.version}", '')
+    into "app/"
+}
+build.finalizedBy(copyJar)

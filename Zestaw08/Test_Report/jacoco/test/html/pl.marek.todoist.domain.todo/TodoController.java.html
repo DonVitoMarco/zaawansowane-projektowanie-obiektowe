@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TodoController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">todoist</a> &gt; <a href="index.source.html" class="el_package">pl.marek.todoist.domain.todo</a> &gt; <span class="el_source">TodoController.java</span></div><h1>TodoController.java</h1><pre class="source lang-java linenums">package pl.marek.todoist.domain.todo;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.data.web.SortDefault;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+
+@RestController
+@RequestMapping(&quot;/todoist&quot;)
+@Api(tags = &quot;Todoist&quot;)
+<span class="fc" id="L20">@AllArgsConstructor</span>
+class TodoController {
+
+    private TodoistService service;
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    @ApiOperation(value = &quot;Get pageable Todos&quot;)
+    @CrossOrigin(origins = &quot;*&quot;)
+    public ResponseEntity&lt;Page&lt;TodoView&gt;&gt; getPage(@PageableDefault @SortDefault.SortDefaults(
+            @SortDefault(sort = &quot;email&quot;, direction = Sort.Direction.DESC)) Pageable pageable) {
+
+<span class="fc" id="L32">        return ResponseEntity.ok(service.findAll(pageable));</span>
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    @ApiOperation(value = &quot;Create Todo&quot;)
+    @CrossOrigin(origins = &quot;*&quot;)
+    public void createTodo(@RequestBody @Valid CreateTodoRequest request) {
+
+<span class="fc" id="L41">        service.create(request);</span>
+<span class="fc" id="L42">    }</span>
+
+    @PatchMapping(value = &quot;/{todoId}&quot;)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ApiOperation(value = &quot;Accept Todo&quot;)
+    @CrossOrigin(origins = &quot;*&quot;)
+    public void doneTodo(@PathVariable String todoId) {
+
+<span class="fc" id="L50">        service.done(todoId);</span>
+<span class="fc" id="L51">    }</span>
+
+    @DeleteMapping(value = &quot;/{todoId}&quot;)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @ApiOperation(value = &quot;Decline Todo&quot;)
+    @CrossOrigin(origins = &quot;*&quot;)
+    public void undoneTodo(@PathVariable String todoId) {
+
+<span class="fc" id="L59">        service.undone(todoId);</span>
+<span class="fc" id="L60">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

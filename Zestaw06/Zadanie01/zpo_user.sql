@@ -1,0 +1,7 @@
+INSERT INTO user (id, login, first_name, second_name, password, email, register_date, phone) VALUES ('47e9', 'njayden', 'Norman', 'Jayden', '123456', 'nj@gmail.com', '2020-01-03 13:52:32', '404404404');
+INSERT INTO user (id, login, first_name, second_name, password, email, register_date, phone) VALUES ('51ed', 'pwJewell', 'Paul', 'Jewell', '123456', 'pw@jewell.com', '2020-01-06 12:22:41', '505222111');
+INSERT INTO user (id, login, first_name, second_name, password, email, register_date, phone) VALUES ('5864', 'b2way', 'Bruce', 'Wayne', '123456', 'bw@com.com', '2020-01-03 13:10:53', '000222333');
+INSERT INTO user (id, login, first_name, second_name, password, email, register_date, phone) VALUES ('5cc3', 'hsim', 'Homer', 'Simpson', '123456', 'hs@hs.com', '2020-01-03 14:06:58', '000222333');
+INSERT INTO user (id, login, first_name, second_name, password, email, register_date, phone) VALUES ('6bbd', 'gsssz', 'Gandalf', 'Szary', '123456', 'gs@gs.com', '2020-01-03 14:09:00', '202101202');
+INSERT INTO user (id, login, first_name, second_name, password, email, register_date, phone) VALUES ('7762', 'mch', 'Marek', 'Ch', '12345', 'mch@gmail.com', '2020-01-15 21:05:27', '500500500');
+INSERT INTO user (id, login, first_name, second_name, password, email, register_date, phone) VALUES ('a8c0', 'mmmmm', 'Marek', 'Pawel', '123456', 'mch@mch.pl', '2020-01-14 20:40:27', '400300200');

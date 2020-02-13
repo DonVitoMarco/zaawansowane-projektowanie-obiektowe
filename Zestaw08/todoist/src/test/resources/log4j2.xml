@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" verbose="true">
+    <Properties>
+        <Property name="log.appender">Console</Property>
+        <Property name="appName">${bundle:application:name}</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{ISO8601} [${appName}] %-5level [%t] %logger: %m%n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="${sys:log.appender}"/>
+        </Root>
+    </Loggers>
+</Configuration>

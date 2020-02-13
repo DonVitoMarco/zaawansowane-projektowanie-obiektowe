@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VelocityParser.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">todoist</a> &gt; <a href="index.source.html" class="el_package">pl.marek.todoist.domain.mail.template</a> &gt; <span class="el_source">VelocityParser.java</span></div><h1>VelocityParser.java</h1><pre class="source lang-java linenums">package pl.marek.todoist.domain.mail.template;
+
+import io.vavr.control.Option;
+import io.vavr.control.Try;
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
+import org.apache.velocity.Template;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.VelocityEngine;
+import org.apache.velocity.tools.generic.DateTool;
+import org.apache.velocity.tools.generic.NumberTool;
+import org.springframework.stereotype.Service;
+
+import java.io.StringWriter;
+import java.time.format.DateTimeFormatter;
+import java.util.Map;
+
+import static java.text.MessageFormat.format;
+
+@Service
+<span class="fc" id="L21">@Log4j2</span>
+<span class="fc" id="L22">@AllArgsConstructor</span>
+class VelocityParser implements TemplateParser {
+
+    private static final String TEMPLATE_FOLDER = &quot;templates/&quot;;
+
+    private VelocityEngine velocityEngine;
+
+    @Override
+    public Option&lt;String&gt; parse(String templateName, Map&lt;String, String&gt; params) {
+<span class="fc" id="L31">        Try&lt;String&gt; parse = Try</span>
+<span class="fc" id="L32">                .of(() -&gt; parseTemplate(templateName, createContext(params)))</span>
+<span class="fc" id="L33">                .onFailure(t -&gt; log.error(format(&quot;Error parsing template : {0}&quot;, templateName)));</span>
+
+<span class="fc" id="L35">        return parse.toOption();</span>
+    }
+
+    private VelocityContext createContext(Map&lt;String, String&gt; params) {
+<span class="fc" id="L39">        VelocityContext context = new VelocityContext();</span>
+<span class="fc" id="L40">        context.put(&quot;params&quot;, params);</span>
+<span class="fc" id="L41">        context.put(&quot;dataTool&quot;, new DateTool());</span>
+<span class="fc" id="L42">        context.put(&quot;dateFormatter&quot;, DateTimeFormatter.ofPattern(&quot;yyyy-MM-dd&quot;));</span>
+<span class="fc" id="L43">        context.put(&quot;numberTool&quot;, new NumberTool());</span>
+<span class="fc" id="L44">        return context;</span>
+    }
+
+    private String parseTemplate(String templateName, VelocityContext context) {
+<span class="fc" id="L48">        StringWriter out = new StringWriter();</span>
+
+<span class="fc" id="L50">        Template template = velocityEngine.getTemplate(TEMPLATE_FOLDER + templateName);</span>
+<span class="fc" id="L51">        template.merge(context, out);</span>
+
+<span class="fc" id="L53">        return out.toString();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

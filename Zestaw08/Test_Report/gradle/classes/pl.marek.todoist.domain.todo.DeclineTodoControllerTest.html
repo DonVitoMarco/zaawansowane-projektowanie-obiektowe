@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class pl.marek.todoist.domain.todo.DeclineTodoControllerTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class pl.marek.todoist.domain.todo.DeclineTodoControllerTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/pl.marek.todoist.domain.todo.html">pl.marek.todoist.domain.todo</a> &gt; DeclineTodoControllerTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.884s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">should change status todo to undone</td>
+<td class="success">0.860s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">todo not exists should return not found status</td>
+<td class="success">0.024s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2020-01-11T21:49:12,090 [todoist-test] INFO  [Test worker] org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper: Neither @ContextConfiguration nor @ContextHierarchy found for test class [pl.marek.todoist.domain.todo.DeclineTodoControllerTest], using SpringBootContextLoader
+2020-01-11T21:49:12,091 [todoist-test] INFO  [Test worker] org.springframework.test.context.support.AbstractContextLoader: Could not detect default resource locations for test class [pl.marek.todoist.domain.todo.DeclineTodoControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-01-11T21:49:12,091 [todoist-test] INFO  [Test worker] org.springframework.test.context.support.AnnotationConfigContextLoaderUtils: Could not detect default configuration classes for test class [pl.marek.todoist.domain.todo.DeclineTodoControllerTest]: DeclineTodoControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-01-11T21:49:12,118 [todoist-test] INFO  [Test worker] org.springframework.boot.test.context.SpringBootTestContextBootstrapper: Found @SpringBootConfiguration pl.marek.todoist.ApplicationTestConfig for test class pl.marek.todoist.domain.todo.DeclineTodoControllerTest
+2020-01-11T21:49:12,119 [todoist-test] INFO  [Test worker] org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper: Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.spockframework.spring.SpringMockTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2020-01-11T21:49:12,119 [todoist-test] INFO  [Test worker] org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper: Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2875f9c1, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@356fd4df, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1e423242, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4cc64699, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4b7a1531, org.springframework.test.context.transaction.TransactionalTestExecutionListener@78e9ad, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@f271bc2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@712b7631, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6ae336b8, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2d118fc8, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1a5f68a3, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@30ef0f27, org.spockframework.spring.SpringMockTestExecutionListener@43caa974]
+                                                            
+,--------. ,-----. ,------.   ,-----. ,--. ,---. ,--------. 
+'--.  .--''  .-.  '|  .-.  \ '  .-.  '|  |'   .-''--.  .--' 
+   |  |   |  | |  ||  |  \  :|  | |  ||  |`.  `-.   |  |    
+   |  |   '  '-'  '|  '--'  /'  '-'  '|  |.-'    |  |  |    
+   `--'    `-----' `-------'  `-----' `--'`-----'   `--'    
+                                                            
+
+ :: Todoist Application :: Running Spring Boot 2.1.4.RELEASE :: 
+----------------------------------------------------------------
+
+2020-01-11T21:49:12,140 [todoist-test] INFO  [Test worker] pl.marek.todoist.domain.todo.DeclineTodoControllerTest: Starting DeclineTodoControllerTest on fedora-desktop with PID 29601 (/home/mchrapek/Studia/Projects/Studia-Zaawansowane-Projektowanie-Obiektowe/Zestaw08/todo-backend/build/classes/groovy/test started by mchrapek in /home/mchrapek/Studia/Projects/Studia-Zaawansowane-Projektowanie-Obiektowe/Zestaw08/todo-backend)
+2020-01-11T21:49:12,140 [todoist-test] INFO  [Test worker] pl.marek.todoist.domain.todo.DeclineTodoControllerTest: No active profile set, falling back to default profiles: default
+2020-01-11T21:49:12,243 [todoist-test] INFO  [Test worker] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-01-11T21:49:12,253 [todoist-test] INFO  [Test worker] org.springframework.data.repository.config.RepositoryConfigurationDelegate: Finished Spring Data repository scanning in 10ms. Found 2 repository interfaces.
+2020-01-11T21:49:12,392 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: note: noprealloc may hurt performance in many applications
+2020-01-11T21:49:12,395 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.395+0100 I CONTROL  [initandlisten] MongoDB starting : pid=29697 port=46481 dbpath=/tmp/embedmongo-db-c0c7be8f-833b-41a7-b4ca-b7376e088343 64-bit host=fedora-desktop
+2020-01-11T21:49:12,395 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.395+0100 I CONTROL  [initandlisten] db version v3.5.5
+2020-01-11T21:49:12,396 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.395+0100 I CONTROL  [initandlisten] git version: 98515c812b6fa893613f063dae568ff8319cbfbd
+2020-01-11T21:49:12,396 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.395+0100 I CONTROL  [initandlisten] allocator: tcmalloc
+2020-01-11T21:49:12,396 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.395+0100 I CONTROL  [initandlisten] modules: none
+2020-01-11T21:49:12,396 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.395+0100 I CONTROL  [initandlisten] build environment:
+2020-01-11T21:49:12,396 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.395+0100 I CONTROL  [initandlisten]     distarch: x86_64
+2020-01-11T21:49:12,396 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.395+0100 I CONTROL  [initandlisten]     target_arch: x86_64
+2020-01-11T21:49:12,397 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.395+0100 I CONTROL  [initandlisten] options: { net: { bindIp: &quot;127.0.0.1&quot;, http: { enabled: false }, port: 46481 }, security: { authorization: &quot;disabled&quot; }, storage: { dbPath: &quot;/tmp/embedmongo-db-c0c7be8f-833b-41a7-b4ca-b7376e088343&quot;, journal: { enabled: false }, mmapv1: { preallocDataFiles: false, smallFiles: true }, syncPeriodSecs: 0.0 } }
+2020-01-11T21:49:12,402 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.402+0100 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=7491M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=0,log_size=2GB),statistics_log=(wait=0),verbose=(recovery_progress),,log=(enabled=false),
+2020-01-11T21:49:12,414 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.414+0100 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2020-01-11T21:49:12,414 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.414+0100 I CONTROL  [initandlisten] 
+2020-01-11T21:49:12,415 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.414+0100 I CONTROL  [initandlisten] ** NOTE: This is a development version (3.5.5) of MongoDB.
+2020-01-11T21:49:12,415 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.414+0100 I CONTROL  [initandlisten] **       Not recommended for production.
+2020-01-11T21:49:12,415 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.414+0100 I CONTROL  [initandlisten] 
+2020-01-11T21:49:12,416 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.414+0100 I CONTROL  [initandlisten] 
+2020-01-11T21:49:12,416 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.414+0100 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. rlimits set to 63602 processes, 524288 files. Number of processes should be at least 262144 : 0.5 times number of files.
+2020-01-11T21:49:12,417 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.417+0100 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/tmp/embedmongo-db-c0c7be8f-833b-41a7-b4ca-b7376e088343/diagnostic.data'
+2020-01-11T21:49:12,421 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.420+0100 I INDEX    [initandlisten] build index on: admin.system.version properties: { v: 2, key: { version: 1 }, name: &quot;incompatible_with_version_32&quot;, ns: &quot;admin.system.version&quot; }
+2020-01-11T21:49:12,421 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.420+0100 I INDEX    [initandlisten] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2020-01-11T21:49:12,421 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.421+0100 I INDEX    [initandlisten] build index done.  scanned 0 total records. 0 secs
+2020-01-11T21:49:12,421 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.421+0100 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 3.4
+2020-01-11T21:49:12,421 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.421+0100 I NETWORK  [thread1] waiting for connections on port 46481
+2020-01-11T21:49:12,422 [todoist-test] INFO  [Test worker] de.flapdoodle.embed.mongo.MongodExecutable: start de.flapdoodle.embed.mongo.config.MongodConfigBuilder$ImmutableMongodConfig@49ab7fe4
+2020-01-11T21:49:12,427 [todoist-test] INFO  [Test worker] org.mongodb.driver.cluster: Cluster created with settings {hosts=[localhost:46481], mode=MULTIPLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2020-01-11T21:49:12,427 [todoist-test] INFO  [Test worker] org.mongodb.driver.cluster: Adding discovered server localhost:46481 to client view of cluster
+2020-01-11T21:49:12,429 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.428+0100 I NETWORK  [thread1] connection accepted from 127.0.0.1:39920 #1 (1 connection now open)
+2020-01-11T21:49:12,429 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.429+0100 I NETWORK  [conn1] received client metadata from 127.0.0.1:39920 conn1: { driver: { name: &quot;mongo-java-driver&quot;, version: &quot;3.8.2&quot; }, os: { type: &quot;Linux&quot;, name: &quot;Linux&quot;, architecture: &quot;amd64&quot;, version: &quot;5.3.16-200.fc30.x86_64&quot; }, platform: &quot;Java/Azul Systems, Inc./1.8.0_212-b04&quot; }
+2020-01-11T21:49:12,430 [todoist-test] INFO  [cluster-ClusterId{value='5e1a34c83a938b73a19e36f9', description='null'}-localhost:46481] org.mongodb.driver.connection: Opened connection [connectionId{localValue:5, serverValue:1}] to localhost:46481
+2020-01-11T21:49:12,431 [todoist-test] INFO  [cluster-ClusterId{value='5e1a34c83a938b73a19e36f9', description='null'}-localhost:46481] org.mongodb.driver.cluster: Monitor thread successfully connected to server with description ServerDescription{address=localhost:46481, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 5, 5]}, minWireVersion=0, maxWireVersion=5, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=null, roundTripTimeNanos=383857}
+2020-01-11T21:49:12,432 [todoist-test] INFO  [cluster-ClusterId{value='5e1a34c83a938b73a19e36f9', description='null'}-localhost:46481] org.mongodb.driver.cluster: Discovered cluster type of STANDALONE
+2020-01-11T21:49:12,676 [todoist-test] INFO  [Test worker] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor: Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-11T21:49:12,736 [todoist-test] INFO  [Test worker] org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping: Adding welcome page: class path resource [public/index.html]
+2020-01-11T21:49:12,794 [todoist-test] INFO  [Test worker] org.springframework.boot.test.mock.web.SpringBootMockServletContext: Initializing Spring TestDispatcherServlet ''
+2020-01-11T21:49:12,795 [todoist-test] INFO  [Test worker] org.springframework.test.web.servlet.TestDispatcherServlet: Initializing Servlet ''
+2020-01-11T21:49:12,807 [todoist-test] INFO  [Test worker] org.springframework.test.web.servlet.TestDispatcherServlet: Completed initialization in 12 ms
+2020-01-11T21:49:12,821 [todoist-test] INFO  [Test worker] pl.marek.todoist.domain.todo.DeclineTodoControllerTest: Started DeclineTodoControllerTest in 0.697 seconds (JVM running for 9.898)
+2020-01-11T21:49:12,830 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.830+0100 I NETWORK  [thread1] connection accepted from 127.0.0.1:39922 #2 (2 connections now open)
+2020-01-11T21:49:12,830 [todoist-test] INFO  [Thread-20] org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongo: 2020-01-11T21:49:12.830+0100 I NETWORK  [conn2] received client metadata from 127.0.0.1:39922 conn2: { driver: { name: &quot;mongo-java-driver&quot;, version: &quot;3.8.2&quot; }, os: { type: &quot;Linux&quot;, name: &quot;Linux&quot;, architecture: &quot;amd64&quot;, version: &quot;5.3.16-200.fc30.x86_64&quot; }, platform: &quot;Java/Azul Systems, Inc./1.8.0_212-b04&quot; }
+2020-01-11T21:49:12,831 [todoist-test] INFO  [Test worker] org.mongodb.driver.connection: Opened connection [connectionId{localValue:6, serverValue:2}] to localhost:46481
+2020-01-11T21:49:12,945 [todoist-test] INFO  [Test worker] pl.marek.todoist.domain.events.MailSenderEventPublisherImpl: Publish MailSendEvent : MailSendEvent(to=test@testowy.pl, templateName=undone.vm, params={firstName=John, lastName=Wick, id=1a2665a4-362f-4ff0-aa46-692a52e875e5})
+2020-01-11T21:49:12,946 [todoist-test] INFO  [Test worker] pl.marek.todoist.domain.mail.MailSenderEventListener: Handle MailSendEvent : MailSendEvent(to=test@testowy.pl, templateName=undone.vm, params={firstName=John, lastName=Wick, id=1a2665a4-362f-4ff0-aa46-692a52e875e5})
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 5.2.1</a> at Jan 11, 2020 9:49:13 PM</p>
+</div>
+</div>
+</body>
+</html>
